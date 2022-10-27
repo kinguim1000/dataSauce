@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  database:
+    image: postgres:14.1-alpine
+    container_name: db
+    ports:
+      - 2345:5432
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=db
+    volumes:
+      - data:/data/postgres
+
+volumes:
+  data:
